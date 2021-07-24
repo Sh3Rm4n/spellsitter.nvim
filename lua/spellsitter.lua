@@ -283,4 +283,13 @@ function M.setup(cfg_)
   vim.cmd[[augroup END']]
 end
 
+function M.disable()
+  ns = api.nvim_create_namespace('spellsitter')
+
+  api.nvim_set_decoration_provider(ns, {
+    on_win = nil,
+    on_line = nil,
+  })
+end
+
 return M
